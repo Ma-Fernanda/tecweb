@@ -5,3 +5,6 @@ include_once("cuerpo.inc.php");
 require("cuerpo.html"); 
 require_once("pie.inc.php"); 
 ?>
+
+/* Este comentario es unicamente
+    para agregar ajemplo de nota  */
