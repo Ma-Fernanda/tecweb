@@ -6,6 +6,7 @@
 <title> Variables </title>
 </head>
 <body>
+    <h2>Ejercicio 1: Validación de variables en PHP</h2>
     <?php
         echo '$_myvar es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
         echo '$_7var es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
@@ -13,9 +14,15 @@
         echo '$myvar es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
         echo '$var7 es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
         echo '$_element1 es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo '$house*5 no es variable válida porque * no es aceptable en PHP'. "<br>";
+        echo '$house*5 no es variable válida porque * no es aceptable en PHP'. "<br>";   
+    ?>
 
-        
+    <h2>Ejercicio 2: Asignación de valores a variables </h2>
+    <?php
+        $a = "ManejadorSQL";
+        $b = 'MySQL';
+        $c = &$a;
+
     ?>
 </body>
 </html>
