@@ -27,7 +27,26 @@
         echo " b: $b <br>";
         echo " c: $c <br>";
 
-
+        $a = "PHP server";
+        $b = &$a;
+        echo "<h3>Reasignación</h3>";
+        echo " a: $a <br>";
+        echo " b: $b <br>";
+        echo " c: $c <br>";
     ?>
+    <h4>Aquí podemos observar como es el comportamiento de las referencias en las variables, <br>
+        en primer lugar las variables: <br>
+        $a almacena el valor "ManejadorSQL". <br>
+        $b almacena el valor "MySQL". <br>
+        $c tiene una referencia a $a, lo que significa que ambas apuntan al mismo valor de memoria. <br>
+        Asi que al imprimirlas, ambas variables mostraran "ManejadorSQL". <br>
+        Después podemos ver una reasignación a las variables $a y $b, por lo que ahora <br>
+        $a = "PHP server" <br>
+        $b = &$a  <br>
+        Ahora $a cambia su valor y ya que en un inicio $c era una referencia a $a, esta tambien lo cambia. <br>
+        $b ahora apunta a $a por lo que es ahora otra referencia a $a. <br>
+        En conclusión, los tres valores mostraran el mismo resultado "PHP server". <br>
+    </h4>
+    <br>
 </body>
 </html>
