@@ -13,6 +13,7 @@
         echo '$myvar es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
         echo '$var7 es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
         echo '$_element1 es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
+        echo '$house*5 no es variable válida porque * no es aceptable en PHP'. "<br>";
 
         
     ?>
