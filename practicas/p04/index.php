@@ -7,7 +7,9 @@
 </head>
 <body>
     <?php
-        echo '$_myvar es variable válida porque empieza con $ seguida de algun tipo de nomenclatura aceptable en PHP' 
+        echo '$_myvar es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
+        echo '$_7var es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
+ 
         
     ?>
 </body>
