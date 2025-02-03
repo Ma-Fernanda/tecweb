@@ -22,6 +22,11 @@
         $a = "ManejadorSQL";
         $b = 'MySQL';
         $c = &$a;
+        echo "<h3>Asignación</h3>";
+        echo " a: $a <br>";
+        echo " b: $b <br>";
+        echo " c: $c <br>";
+
 
     ?>
 </body>
