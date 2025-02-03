@@ -8,13 +8,22 @@
 <body>
     <h2>Ejercicio 1: Validación de variables en PHP</h2>
     <?php
-        echo '$_myvar es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo '$_7var es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo 'myvar no es variable válida porque no empieza con $ por lo tanto no es aceptable en PHP'. "<br>";
-        echo '$myvar es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo '$var7 es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo '$_element1 es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP'. "<br>";
-        echo '$house*5 no es variable válida porque * no es aceptable en PHP'. "<br>";   
+        $_myvar;
+        $_7var;
+        //myvar;       // Es inválida
+        $myvar;
+        $var7;
+        $_element1;
+        //$house*5;     // Es invalida
+        echo '<ul>';
+        echo '<li> $_myvar es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li>';
+        echo '<li>$_7var es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li>';
+        echo '<li>myvar no es variable válida porque no empieza con $ por lo tanto no es aceptable en PHP'. "<br>";
+        echo '<li>$myvar es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP </li>';
+        echo '<li>$var7 es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP </li>';
+        echo '<li>$_element1 es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li>';
+        echo '<li>$house*5 no es variable válida porque * no es aceptable en PHP </li>'; 
+        echo '</ul>';  
     ?>
 
     <h2>Ejercicio 2: Asignación de valores a variables </h2>
@@ -48,5 +57,34 @@
         En conclusión, los tres valores mostraran el mismo resultado "PHP server". <br>
     </h4>
     <br>
+    <h2>Ejercicio 3: Mostrar el contenido de cada variable inmediatamente después de cada asignación</h2> 
+    <?php
+        $a = "PHP5";
+        echo " \$a: $a  <br>";
+
+        $z[] = &$a;
+        echo "\$z[]: ";
+        print_r($z);
+        echo "<br>";
+
+        $b = "5a version de PHP";
+        echo "\$b: $b <br>";
+
+        $c = $b*10;
+        echo "\$c: $c <br>";
+
+        $a .= $b;
+        echo "\$a: $a <br>";
+
+        $b *= $c;
+        echo "\$b: $b <br>";
+
+        $z[0] = "MySQL";
+        echo "\$z[0]: ";
+        print_r($z);
+        echo "<br>";
+    ?>
+    <br>
+    <h2>Leer y mostrar variables con ayuda de la matriz "$GLOBALS"</h2>
 </body>
 </html>
