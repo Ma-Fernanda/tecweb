@@ -111,8 +111,19 @@
         echo "\$z[]: ";
             print_r($GLOBALS['z']);
             echo "<br>";
-?>
+    ?>
+    <h2>Ejercicio 5: Dar el valor de las variables $a, $b, $c al final </h2>
+    <?php
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
 
+
+        echo " \$a: $a  <br>";
+        echo "\$b: $b <br>";
+        echo "\$c: $c <br>";
+    ?>
 
 </body>
 </html>
