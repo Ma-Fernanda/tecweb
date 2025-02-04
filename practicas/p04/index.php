@@ -107,10 +107,12 @@
         $b *= $c;
         echo "\$b: " . $GLOBALS ['b'] . "<br>";
 
-        $GLOBALS['z'][0] = "MySQL";
+        $z[0] = "MySQL";
         echo "\$z[]: ";
             print_r($GLOBALS['z']);
             echo "<br>";
+        
+        unset($a, $b, $c, $z)
     ?>
     <h2>Ejercicio 5: Dar el valor de las variables $a, $b, $c al final </h2>
     <?php
@@ -123,7 +125,47 @@
         echo " \$a: $a  <br>";
         echo "\$b: $b <br>";
         echo "\$c: $c <br>";
+    ?> <br>
+
+    <h2>Ejercicio 6:Comprobación de valores booleanos usando la función "var_dump(<datos>)"  </h2>
+    <?php
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        echo "\$a: ";
+        var_dump($a);
+        echo "<br>";
+
+        echo "\$b: ";
+        var_dump($b); 
+        echo "<br>";
+
+        echo "\$c: ";
+        var_dump($c); 
+        echo "<br>";
+
+        echo "\$d: ";
+        var_dump($d); 
+        echo "<br>";
+
+        echo "\$e: ";
+        var_dump($e); 
+        echo "<br>";
+
+        echo "\$f: ";
+        var_dump($f); 
+        echo "<br>";
+
+        echo "<h3>Transformación de valores booleanos a string para poder ser mostrados con echo </h3>";
+        echo "\$c: " . var_export($c, true) . "<br>"; 
+        echo "\$e: " . var_export($d, true) . "<br>"; 
     ?>
+    <br>
+    <h2>Usando la variable predefinida $_SERVER, determina:</h2>
 
 </body>
 </html>
