@@ -165,7 +165,14 @@
         echo "\$e: " . var_export($d, true) . "<br>"; 
     ?>
     <br>
-    <h2>Usando la variable predefinida $_SERVER, determina:</h2>
+    <h2>Ejercicio 7: Usando la variable predefinida $_SERVER, determina:</h2>
+    <?php
+        echo "Versión de Apache: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
+        echo "Versión de PHP: " . phpversion() . "<br>";
 
+        echo "Nombre Sistema Operativo: " . PHP_OS . "<br>";
+
+        echo "Idioma del navegador: " . $_SERVER['HTTP_ACCEPT_LANGUAGE'] . "<br>";
+    ?>
 </body>
 </html>
