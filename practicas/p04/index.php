@@ -85,6 +85,34 @@
         echo "<br>";
     ?>
     <br>
-    <h2>Leer y mostrar variables con ayuda de la matriz "$GLOBALS"</h2>
+    <h2>Ejercicio 4: Leer y mostrar variables con ayuda de la matriz "$GLOBALS"</h2>
+    <?php
+        $a = "PHP5";
+        echo "\$a: " . $GLOBALS['a'] . "<br>";
+
+        $GLOBALS['z'][] = &$a;
+        echo "\$z[]: ";
+        print_r($GLOBALS['z']);
+        echo "<br>";
+
+        $b = "5a version de PHP";
+        echo "\$b: " . $GLOBALS['b'] . "<br>";
+
+        $c = $b * 10;
+        echo "\$c: " . $GLOBALS['c'] . "<br>";
+
+        $a .= $b;
+        echo "\$a: " . $GLOBALS ['a'] . "<br>";
+
+        $b *= $c;
+        echo "\$b: " . $GLOBALS ['b'] . "<br>";
+
+        $GLOBALS['z'][0] = "MySQL";
+        echo "\$z[]: ";
+            print_r($GLOBALS['z']);
+            echo "<br>";
+?>
+
+
 </body>
 </html>
