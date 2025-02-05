@@ -70,7 +70,7 @@
         $b = "5a version de PHP";
         echo "\$b: $b <br>";
 
-        $c = $b*10;
+        @$c = $b*10;
         echo "\$c: $c <br>";
 
         $a .= $b;
@@ -98,7 +98,7 @@
         $b = "5a version de PHP";
         echo "\$b: " . $GLOBALS['b'] . "<br>";
 
-        $c = $b * 10;
+        @$c = $b * 10;
         echo "\$c: " . $GLOBALS['c'] . "<br>";
 
         $a .= $b;
@@ -162,7 +162,7 @@
 
         echo "<h3>Transformación de valores booleanos a string para poder ser mostrados con echo </h3>";
         echo "\$c: " . var_export($c, true) . "<br>"; 
-        echo "\$e: " . var_export($d, true) . "<br>"; 
+        echo "\$e: " . var_export($e, true) . "<br>"; 
     ?>
     <br>
     <h2>Ejercicio 7: Usando la variable predefinida $_SERVER, determina:</h2>
