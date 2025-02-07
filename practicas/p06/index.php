@@ -14,6 +14,21 @@
         $num = $_GET['numero'];
         echo '<p>' . Multiplo($num). '</p>';
     }
+    
+    echo '<h2>Ejercicio 2: Generación repetitiva de 3 números aleatorios hasta obtener una
+        secuencia compuesta por: impar, par, impar</h2>';
+
+        $resultado = Secuencia();
+        $matrizfinal = $resultado['matriz'];
+        $iteraciones = $resultado['iteraciones'];
+        $numgenerados = $resultado['numgenerados'];
+
+        foreach($matrizfinal as $fila) {
+            echo implode (', ', $fila). '<br>';
+        }
+        echo '<br>';
+        echo '<b>'. $numgenerados . '</b> números obtenidos en  <b>' . $iteraciones . '</b> iteraciones</p>';
     ?>
+
 </body>
 </html>
