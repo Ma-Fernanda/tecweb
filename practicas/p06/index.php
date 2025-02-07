@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php
+//Ejercicio 1
     echo '<h2>Ejercicio 1: Comprueba si un número es múltiplo de 5 y 7</h2>';
     require_once __DIR__ .'/src/funciones.php';
 
@@ -14,7 +15,7 @@
         $num = $_GET['numero'];
         echo '<p>' . Multiplo($num). '</p>';
     }
-    
+//Ejercicio 2 
     echo '<h2>Ejercicio 2: Generación repetitiva de 3 números aleatorios hasta obtener una
         secuencia compuesta por: impar, par, impar</h2>';
 
@@ -29,7 +30,7 @@
         echo '<br>';
         echo '<b>'. $numgenerados . '</b> números obtenidos en  <b>' . $iteraciones . '</b> iteraciones</p>';
 
-
+//Ejercicio 3
         echo '<h2>Ejercicio 3:Utilizar un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
                 pero que además sea múltiplo de un número dado.</h2>';
 
@@ -41,7 +42,7 @@
         if (isset($_GET['numero']) && is_numeric($_GET['numero']) && $_GET['numero'] != 0) {
             echo numAleatorio2();
         }   
-
+//Ejercicio 4
         echo '<h2>Ejercicio 4:Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’
                 a la ‘z’. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
                 el valor en cada índice. '
@@ -62,6 +63,25 @@
         }
         ?>
     </table>
+<br>
+    <form action="http://localhost/tecweb/practicas/p06/index.php" method="POST">
+        <br>
+            Edad:
+            <input type="number" name="edad" id="edad" required>
+        <br> <br>
+            Sexo:
+            <select name="sexo" id="sexo" required>
+                <option value="">Seleccione...</option>
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+            </select>
+        <br> <br>
 
+        <input type="submit" value="Enviar">
+    </form>
+<?php
+        $resultado = edsex();
+
+?>
 </body>
 </html>
