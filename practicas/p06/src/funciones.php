@@ -72,17 +72,21 @@
     }
 //función para verificar edad y sexo
     function edsex(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['edad']) && isset($_POST['sexo'])) {
             $edad = $_POST['edad'];
             $sexo = $_POST['sexo']; 
-            
+
             if ($sexo == "femenino" && $edad >= 18 && $edad <= 35) {
                 $mensaje = "¡Bienvenida, usted está en el rango de edad permitido!";
             } else {
                 $mensaje = "Lo sentimos, no cumple con los requisitos.";
             }
-        } else {
-            $mensaje = "Por favor, complete todos los campos.";
-        }
-}
+        }     
+    }
+    echo $mensaje;
+    }
+
+    edsex();
+
 ?>

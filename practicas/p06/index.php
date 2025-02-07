@@ -64,7 +64,8 @@
         ?>
     </table>
 <br>
-    <form action="http://localhost/tecweb/practicas/p06/index.php" method="POST">
+<h2>Ejercicio 5: Validar el sexo del usuario</h2>
+    <form action="src/funciones.php" method="POST">
         <br>
             Edad:
             <input type="number" name="edad" id="edad" required>
@@ -79,9 +80,5 @@
 
         <input type="submit" value="Enviar">
     </form>
-<?php
-        $resultado = edsex();
-
-?>
 </body>
 </html>
