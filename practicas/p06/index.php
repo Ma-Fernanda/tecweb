@@ -6,8 +6,8 @@
 <title> Practica de Funciones </title>
 </head>
 <body>
-    <h2>Ejercicio 1: Comprueba si un número es múltiplo de 5 y 7</h2>
     <?php
+    echo '<h2>Ejercicio 1: Comprueba si un número es múltiplo de 5 y 7</h2>';
     require_once __DIR__ .'/src/funciones.php';
 
     if(isset($_GET['numero'])) {
@@ -28,6 +28,22 @@
         }
         echo '<br>';
         echo '<b>'. $numgenerados . '</b> números obtenidos en  <b>' . $iteraciones . '</b> iteraciones</p>';
+
+
+        echo '<h2>Ejercicio 3:Utilizar un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
+                pero que además sea múltiplo de un número dado.</h2>';
+
+        echo '<p>Porfavor escriba lo siguiente en la dirección URL: ?numero=___ (algún número entre -100 y 100) ';
+        if (isset($_GET['numero']) && is_numeric($_GET['numero']) && $_GET['numero'] != 0) {
+            echo numAleatorio();
+        }
+
+        if (isset($_GET['numero']) && is_numeric($_GET['numero']) && $_GET['numero'] != 0) {
+            echo numAleatorio2();
+        }   
+
+
+        
     ?>
 
 </body>

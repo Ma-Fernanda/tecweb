@@ -30,5 +30,35 @@
             'numgenerados' => $numgenerados];
     }
 
+//función numero entero aleatorio
+    function numAleatorio(){
+        $numusuario = intval($_GET['numero']);
+        if($numusuario>=-100 && $numusuario <=100){
+        $numAleatorio = 0;
+        while(true){
+            $numAleatorio = rand (-100, 100);
 
+            if($numAleatorio % $numusuario == 0){
+                break;
+            }
+        }
+        echo '<p>Número encontrado con while: <b>' . $numAleatorio. '</b> es múltiplo de <b>' .$numusuario .'</b></p>';
+    }else{
+        echo '<p>El número ingresado no se encuentra en el rango de -100 a 100, porfavor inténtelo de nuevo';
+        }
+}
+
+    function numAleatorio2() {
+        $numusuario = intval($_GET['numero']);
+        if($numusuario>=-100 && $numusuario <=100){
+        $numAleatorio = 0;
+
+        do {
+            $numAleatorio = rand (-100, 100); 
+        } while($numAleatorio % $numusuario != 0);
+        echo '<p>Número encontrado con do-while: <b>' . $numAleatorio. '</b> es múltiplo de <b>' .$numusuario .'</b></p>';
+    }else{
+        echo '<p>El número ingresado no se encuentra en el rango de -100 a 100, porfavor inténtelo de nuevo';
+        }
+}
 ?>
