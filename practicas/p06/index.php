@@ -42,9 +42,26 @@
             echo numAleatorio2();
         }   
 
-
-        
+        echo '<h2>Ejercicio 4:Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’
+                a la ‘z’. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
+                el valor en cada índice. '
     ?>
+    <h2>Tabla de Letras ASCII</h2>
+    <table border="1.5">
+        <tr>
+            <th>ASCII</th>
+            <th>Letra</th>
+        </tr>
+        <?php
+        $letras = letrasASCII();
+        foreach ($letras as $key => $value) {
+            echo "<tr>";
+            echo "<td>$key</td>";
+            echo "<td>$value</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
 
 </body>
 </html>

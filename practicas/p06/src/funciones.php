@@ -61,4 +61,13 @@
         echo '<p>El número ingresado no se encuentra en el rango de -100 a 100, porfavor inténtelo de nuevo';
         }
 }
+
+//función arreglo con tabla y ASCII
+    function letrasASCII() {
+        $letras = [];
+        for ($i = 97; $i <= 122; $i++) {
+            $letras[$i] = chr($i);
+        }
+        return $letras; 
+    }
 ?>
