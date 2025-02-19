@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Variables </title>
+</head>
+<body>
+    <h2>Ejercicio 1: Validación de variables en PHP</h2>
+    <ul><li> $_myvar es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li><li>$_7var es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li><li>myvar no es variable válida porque no empieza con $ por lo tanto no es aceptable en PHP</li><li>$myvar es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP </li><li>$var7 es variable válida porque empieza con $ seguida de una letra y algun tipo de nomenclatura aceptable en PHP </li><li>$_element1 es variable válida porque empieza con $ seguida de un guión bajo y algun tipo de nomenclatura aceptable en PHP </li><li>$house*5 no es variable válida porque * no es aceptable en PHP </li></ul>
+    <h2>Ejercicio 2: Asignación de valores a variables </h2>
+    <h3>Asignación</h3> <p>a: ManejadorSQL </p> <p>b: MySQL </p> <p>c: ManejadorSQL </p><h3>Reasignación</h3> <p>a: PHP server </p> <p>b: PHP server </p> <p>c: PHP server </p>    <h4>Aquí podemos observar cómo es el comportamiento de las referencias en las variables:</h4>
+        <p>
+            En primer lugar, las variables:<br />
+            $a almacena el valor "ManejadorSQL".<br />
+            $b almacena el valor "MySQL".<br />
+            $c tiene una referencia a $a, lo que significa que ambas apuntan al mismo valor de memoria.<br />
+            Así que al imprimirlas, ambas variables mostrarán "ManejadorSQL".<br />
+            Después podemos ver una reasignación a las variables $a y $b, por lo que ahora:<br />
+            $a = "PHP server";<br />
+            $b = amp$a;<br />
+            Ahora $a cambia su valor y ya que en un inicio $c era una referencia a $a, esta también lo cambia.<br />
+            $b ahora apunta a $a, por lo que es ahora otra referencia a $a.<br />
+            En conclusión, los tres valores mostrarán el mismo resultado "PHP server".
+        </p>
+    <h2>Ejercicio 3: Mostrar el contenido de cada variable inmediatamente después de cada asignación</h2> 
+    <p> $a: PHP5 </p><p>$z[]: Array
+(
+    [0] => PHP5
+)
+</p><p>$b: 5a version de PHP </p><p>$c: 50 </p><p>$a: 5050 </p><p>$b: 25502500 </p><p>$z[0]: Array
+(
+    [0] => MySQL
+)
+</p> 
+    <h2>Ejercicio 4: Leer y mostrar variables con ayuda de la matriz "$GLOBALS"</h2>
+    <p>$a: PHP5</p><p>$z[]: Array
+(
+    [0] => PHP5
+    [1] => PHP5
+)
+</p><p>$b: 5a version de PHP</p><p>$c: 50</p><p>$a: 5050</p><p>$b: 25502500</p><p>$z[]: Array
+(
+    [0] => MySQL
+    [1] => MySQL
+)
+</p>    <h2>Ejercicio 5: Dar el valor de las variables $a, $b, $c al final </h2>
+     <p>$a: 9E3  </p><p>$b: 7 </p><p>$c: 9000 </p> 
+
+    <h2>Ejercicio 6:Comprobación de valores booleanos usando la función "var_dump(datos)"  </h2>
+    <p>$a: string(1) "0"
+</p><p>$b: string(4) "TRUE"
+</p><p>$c: bool(false)
+</p><p>$d: bool(true)
+</p><p>$e: bool(false)
+</p><p>$f: bool(true)
+</p><h3>Transformación de valores booleanos a string para poder ser mostrados con echo </h3><p>$c: false</p><p>$e: false</p>    
+    <h2>Ejercicio 7: Usando la variable predefinida $_SERVER, determina:</h2>
+    <p>Versión de Apache: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12</p><p>Versión de PHP: 8.2.12</p><p>Nombre Sistema Operativo: WINNT</p><p>Idioma del navegador: es-419,es;q=0.9</p>
+    <div>
+    <p>
+    <a href="https://validator.w3.org/markup/check?uri=referer"><img
+      src="https://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+    </div>
+</body>
+</html>
