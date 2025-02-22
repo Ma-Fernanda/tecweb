@@ -6,6 +6,7 @@ $precio = $_POST['precio'];
 $detalles =$_POST['details'];
 $unidades = $_POST['unidades'];
 $imagen   = $_POST['imagen'];
+$eliminado = 0;
 
 /** SE CREA EL OBJETO DE CONEXION */
 @$link = new mysqli('localhost', 'root', 'Fernanda465', 'marketzone');	
@@ -24,11 +25,11 @@ $result = $stmt->get_result();
 if($result->num_rows > 0){
     echo "ERROR: El producto que intenta registrar ya se encuentra en la base de datos.";
 } else {
-    //$sql = "INSERT INTO productos (nombre,marca,modelo,precio,detalles,unidades,imagen, eliminado) VALUES (?,?,?,?,?,?,?,?)";
-    $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    $sql = "INSERT INTO productos VALUES (NULL, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', {$eliminado})";
+    //$sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $link->prepare($sql);
-    //$eliminado = 0;
-    $stmt->bind_param("sssdiss", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
+    //$stmt->bind_param("sssdsssi", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen,$eliminado);
 
     if ($stmt->execute()) {
         echo "Producto registrado exitosamente.";
@@ -39,7 +40,7 @@ if($result->num_rows > 0){
         echo "<p><strong>Detalles:</strong> $detalles</p>";
         echo "<p><strong>Unidades:</strong> $unidades</p>";
         echo "<p><strong>Imagen:</strong> $imagen</p>";
-        //echo "<p><strong>Eliminado:</strong> $eliminado</p>";
+        echo "<p><strong>Eliminado:</strong> $eliminado</p>";
     } else {
         echo "Error al registrar el producto " . $stmt->error;
     }
