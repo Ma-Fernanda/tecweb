@@ -202,3 +202,14 @@ function numDigitos() {
     } while(valor!=0);
 }
 
+//Ejemplo 13
+function mostrarNum(){
+    var f;
+    var resultado;
+
+    for(f=1; f<=10; f++){
+        resultado +=f + '<br>';
+        var div1 = document.getElementById('num');
+        div1.innerHTML = resultado;
+    }
+}
