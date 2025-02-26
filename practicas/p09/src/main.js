@@ -132,3 +132,20 @@ function valNum(){
             div6.innerText = 'Debe ingresar un valor comprendido entre 1 y 5 porfavor intente de nuevo.';
     }
 }
+
+//Ejemplo 9
+function colores() {
+    var col = prompt("Ingresa el color con el que quieras pintar el dondo de la ventana (rojo, verde, azul)", "");
+
+    switch(col) {
+        case 'rojo':
+            document.body.style.backgroundColor = '#ff0000'; 
+            break;
+        case 'verde':
+            document.body.style.backgroundColor = '#00ff00'; 
+            break;
+        case 'azul':
+            document.body.style.backgroundColor = '#0000ff'; 
+            break;
+    }
+}
