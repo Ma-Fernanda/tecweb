@@ -221,3 +221,14 @@ function mensajeAdvertencia(){
     document.getElementById('ad3').innerHTML = 'Cuidado <br> Ingresa tu documento correctamente <br>';
 }
 
+//Ejemplo 15
+function mensajeAdvertencia2(){
+    function mostrarMensaje(){
+        document.getElementById('ad').innerHTML += 'Cuidado <br> Ingresa tu documento correctamente <br>';
+
+    }
+    mostrarMensaje();
+    mostrarMensaje();
+    mostrarMensaje();
+}
+
