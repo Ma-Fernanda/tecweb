@@ -102,3 +102,33 @@ function promAlumno(){
     }
 }
 
+//Ejemplo 8
+function valNum(){
+    var valor = prompt("Ingresar un valor comprendido entre 1 y 5:", "");
+    valor = parseInt(valor);
+    switch (valor) {
+        case 1: 
+            var div1= document.getElementById('uno');
+            div1.innerHTML = '<h3> uno </h3>';
+            break;
+        case 2: 
+            var div2= document.getElementById('dos');
+            div2.innerHTML = '<h3> dos </h3>';
+            break;
+        case 3: 
+            var div3= document.getElementById('tres');
+            div3.innerHTML = '<h3> tres </h3>';
+            break;
+        case 4: 
+            var div4= document.getElementById('cuatro');
+            div4.innerHTML = '<h3> cuatro </h3>';
+            break;
+        case 5: 
+            var div5= document.getElementById('cinco');
+            div5.innerHTML = '<h3> cinco </h3>';
+            break;
+        default: 
+            var div6= document.getElementById('error');
+            div6.innerText = 'Debe ingresar un valor comprendido entre 1 y 5 porfavor intente de nuevo.';
+    }
+}
