@@ -213,3 +213,11 @@ function mostrarNum(){
         div1.innerHTML = resultado;
     }
 }
+
+//Ejemplo 14
+function mensajeAdvertencia(){
+    document.getElementById('ad1').innerHTML = 'Cuidado <br> Ingresa tu documento correctamente <br>';
+    document.getElementById('ad2').innerHTML = 'Cuidado <br> Ingresa tu documento correctamente <br>';
+    document.getElementById('ad3').innerHTML = 'Cuidado <br> Ingresa tu documento correctamente <br>';
+}
+
