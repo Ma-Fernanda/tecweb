@@ -232,3 +232,21 @@ function mensajeAdvertencia2(){
     mostrarMensaje();
 }
 
+//Ejemplo 16
+function rangoNum(){
+    function mostrarRango(x1,x2) {
+        var inicio;
+        for(inicio=x1; inicio<=x2; inicio++) {
+            var div1 = document.getElementById('val');
+            div1.innerHTML += inicio + '';        
+        }
+    }
+    var valor1 = prompt ("Ingrese el valor inferior: ", "");
+    valor1 = parseInt(valor1);
+    var valor2 = prompt ("Ingrese el valor superior: ", "");
+    valor2 = parseInt(valor2);
+
+    mostrarRango(valor1, valor2);
+}
+
+
