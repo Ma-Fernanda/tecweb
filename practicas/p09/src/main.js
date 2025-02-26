@@ -54,4 +54,15 @@ function entradaNum(){
     div2.innerHTML = '<h3>El producto es ' + producto + '</h3>';
 }
 
+//Ejemplo 5
+function califAlumno(){
+    var nombre = prompt("Ingresa tu nombre: ", "");
+    var nota = prompt("Ingresa tu nota: ", "");
+
+    if(nota >= 4){
+        var div1 = document.getElementById('nota');
+        div1.innerHTML = '<h3>' + nombre + ' esta aprobado con un ' + nota + '</h3>';
+    }
+}
+
 
