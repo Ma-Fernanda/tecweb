@@ -162,3 +162,19 @@ function cadenaNum(){
         document.getElementById('ejemplo10').innerHTML = resultado;
     }
 }
+
+//Ejemplo 11
+function sumaAcumulativa(){
+    var x = 1;
+    var suma = 0;
+    var valor;
+
+    while (x <= 5) {
+        valor = prompt("Ingresa el valor:", "");
+        valor = parseInt(valor);
+        suma = suma + valor;
+        x = x + 1;
+    }
+    var div1 = document.getElementById('suma2');
+    div1.innerHTML = '<h3> La suma de los valores es ' + suma + '</h3><br>';
+}
