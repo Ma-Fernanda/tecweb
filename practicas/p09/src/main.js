@@ -32,5 +32,14 @@ function datos() {
     div4.innerText = 'Casado: ' +  casado;
 }
 
+//Ejemplo 3
+function entradaDatos(){
+    var nombre = prompt("Ingresa tu nombre: ","");
+    var edad = prompt("Ingresa tu edad: ","");
+
+    var div1 = document.getElementById('edad2');
+    div1.innerHTML = '<h3>Hola ' + nombre + ' asi que tienes ' + edad + ' años </h3>';
+}
+
 
 
