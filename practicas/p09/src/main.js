@@ -149,3 +149,16 @@ function colores() {
             break;
     }
 }
+
+//Ejemplo 10
+function cadenaNum(){
+    var x = 1;
+    var resultado;
+    resultado +=x + '<br>';
+
+    while (x <= 100) {
+        resultado +=x + '<br>';
+        x = x + 1;
+        document.getElementById('ejemplo10').innerHTML = resultado;
+    }
+}
