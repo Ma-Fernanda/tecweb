@@ -65,4 +65,19 @@ function califAlumno(){
     }
 }
 
+//Ejemplo 6
+function numMayor(){
+    var num1 = prompt("Ingresa el primer número: ", "");
+    var num2 = prompt("Ingresa el segundo número: ", "");
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    if(num1>num2){
+        var div1 = document.getElementById('mayor');
+        div1.innerHTML = '<h3>El mayor es ' + num1 + '</h3>';
+    } else {
+        var div2 = document.getElementById('menor');
+        div2.innerHTML = '<h3>El mayor es ' + num2 + '</h3>';
+    }
+}
 
