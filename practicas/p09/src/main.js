@@ -81,3 +81,24 @@ function numMayor(){
     }
 }
 
+//Ejemplo 7
+function promAlumno(){
+    var nota1 = prompt("Ingresa 1ra. nota: ", "");
+    var nota2 = prompt("Ingresa 2da. nota: ", "");
+    var nota3 = prompt("Ingresa 3ra. nota: ", "");
+    var promedio = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3))/3;
+
+    if(promedio >=7) {
+        var div1 = document.getElementById('aprobado');
+        div1.innerHTML = '<h3> Aprobado </h3>';
+    } else {
+        if (promedio >= 4) {
+        var div2 = document.getElementById('regular');
+        div2.innerHTML = '<h3> Regular </h3>';
+        } else {
+        var div3 = document.getElementById('reprobado');
+        div3.innerHTML = '<h3> Reprobado </h3>';
+        }
+    }
+}
+
