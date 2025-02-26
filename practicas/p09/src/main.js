@@ -41,5 +41,17 @@ function entradaDatos(){
     div1.innerHTML = '<h3>Hola ' + nombre + ' asi que tienes ' + edad + ' años </h3>';
 }
 
+//Ejemplo 4
+function entradaNum(){
+    var valor1 = prompt("Introducir el primer número: ", "");
+    var valor2 = prompt("Introducir el segundo número: ", "");
+    var suma = parseInt(valor1) + parseInt(valor2);
+    var producto = parseInt(valor1) * parseInt(valor2);
+
+    var div1 = document.getElementById('suma');
+    var div2 = document.getElementById('producto');
+    div1.innerHTML = '<h3>La suma es ' + suma + '</h3>';
+    div2.innerHTML = '<h3>El producto es ' + producto + '</h3>';
+}
 
 
