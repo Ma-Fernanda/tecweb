@@ -178,3 +178,27 @@ function sumaAcumulativa(){
     var div1 = document.getElementById('suma2');
     div1.innerHTML = '<h3> La suma de los valores es ' + suma + '</h3><br>';
 }
+
+//Ejemplo 12
+function numDigitos() {
+    var valor;
+    do{
+    valor = prompt("Ingresa un valor entre 0 y 999 : ", "");
+    valor = parseInt(valor);
+
+    var div1 = document.getElementById('elemento');
+    div1.innerHTML = '<h3>El valor '+ valor + ' tiene: ';
+
+    if (valor < 10){
+        var div2 = document.getElementById('1digito');
+        div2.innerHTML = '<h3> 1 dígito </h3>';
+    } else if (valor < 100) {
+        var div3 = document.getElementById('2digito');
+        div3.innerHTML = '<h3> 2 dígitos </h3>';
+    } else {
+        var div4 = document.getElementById('3digito');
+        div4.innerHTML = '<h3> 3 dígitos </h3>';   
+    }
+    } while(valor!=0);
+}
+
