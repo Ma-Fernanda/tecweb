@@ -31,13 +31,20 @@
         }*/
 
          if(!nombre){
-          mensError.innerHTML = "El nombre del producto es necesario";
+          mensError.innerHTML = "El nombre del producto es necesario. <br>";
           return false;
          } else if (nombre.length > 100){
-          mensError.innerHTML = "El nombre del producto debe tener un máximo de 100 caracteres";
+          mensError.innerHTML = "El nombre del producto debe tener un máximo de 100 caracteres <br>";
           return false;
         }
         
+        if(!marca){
+          mensError.innerHTML += "La marca es requerida. <br>";
+          return false;
+        }
+
+        
+
         return true;
         }
     </script>
@@ -50,8 +57,17 @@
         <legend>Información del Producto</legend>
         <ul>
             <li><label for="form-name">Nombre:</label> <input type="text" name="name" id="form-name"></li>
-            <li><label for="form-marca">Marca:</label> <input type="text" name="marca" id="form-marca"></li>
-            <li><label for="form-model">Modelo:</label> <input type="text" name="modelo" id="form-model"></li>
+            <li>
+              <label for="form-marca">Marca:</label> 
+                <select name="marca" id="form-marca">
+                  <option value="">Seleccione una marca</option>
+                  <option value="cassio">Cassio</option>
+                  <option value="timex">Timex</option>
+                  <option value="swatch+">Swatch+</option>
+                  <option value="citizen">Citizen</option>
+                </select>
+            </li>
+              <li><label for="form-model">Modelo:</label> <input type="text" name="modelo" id="form-model"></li>
             <li><label for="form-precio">Precio</label> <input type="number" name="precio" id="form-precio" step="0.01"></li>
             <li><label for="form-details">Detalles:</label><br><textarea name="details" rows="4" cols="60" id="form-details" placeholder="No más de 200 caracteres"></textarea></li>
             <li><label for="form-unidades">Unidades</label><input type="number" name="unidades" id="form-unidades"></li>
