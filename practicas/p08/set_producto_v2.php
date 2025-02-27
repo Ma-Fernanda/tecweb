@@ -27,7 +27,7 @@ if($result->num_rows > 0){
 } else {
 
     //$sql = "INSERT INTO productos VALUES (NULL, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', {$eliminado})";
-    $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
     $stmt = $link->prepare($sql);
     $stmt->bind_param("sssdsssi", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen,$eliminado);
 

@@ -3,8 +3,16 @@
   <head>
     <meta charset="utf-8" >
     <title>Formulario de Productos</title>
+    <style>
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
     <script>
     function validarFormulario() {
+        const mensError = document.getElementById('mensError');
+        mensError.innerHTML = '';
         const nombre = document.getElementById('form-name').value;
         const marca = document.getElementById('form-marca').value;
         const modelo = document.getElementById('form-model').value;
@@ -12,7 +20,7 @@
         const details = document.getElementById('form-details').value;
         const unidades = document.getElementById('form-unidades').value;
         const imagen = document.getElementById('form-img').value;
-        if (!nombre || !marca || !modelo || !precio || !details || !unidades || !imagen) {
+        /*if (!nombre || !marca || !modelo || !precio || !details || !unidades || !imagen) {
             alert("Todos los campos son obligatorios.");
             return false;
         }
@@ -20,14 +28,23 @@
         if (isNaN(precio) || isNaN(unidades)) {
             alert("El precio y las unidades deben ser números.");
             return false;
-        }
+        }*/
 
+         if(!nombre){
+          mensError.innerHTML = "El nombre del producto es necesario";
+          return false;
+         } else if (nombre.length > 100){
+          mensError.innerHTML = "El nombre del producto debe tener un máximo de 100 caracteres";
+          return false;
+        }
+        
         return true;
         }
     </script>
   </head>
   <body>
     <h1>Registro de Productos</h1>
+    <div id="mensError" class="error"></div>
     <form id="formularioProductos" action="set_producto_v2.php" method="post" onsubmit="return validarFormulario();">
     <fieldset>
         <legend>Información del Producto</legend>
