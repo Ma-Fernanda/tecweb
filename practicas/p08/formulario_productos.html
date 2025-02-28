@@ -54,7 +54,10 @@
         return false;
         }
         
-        
+        if (!precio || isNaN(precio) || precio <= 99.99) {
+          mensError.innerHTML += "El precio es requerido y debe ser mayor a 99.99.";
+          return false;
+        }
         
         return true;
         }
