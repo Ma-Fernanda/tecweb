@@ -58,6 +58,11 @@
           mensError.innerHTML += "El precio es requerido y debe ser mayor a 99.99.";
           return false;
         }
+
+        if (details.length > 250) {
+          mensError.innerHTML += "Los detalles, si se usan, deben tener un máximo de 250 caracteres.";
+          return false;
+        }
         
         return true;
         }
