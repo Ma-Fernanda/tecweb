@@ -68,6 +68,11 @@
           mensError.innerHTML += "Las unidades son requeridas y deben ser un número mayor o igual a 0.";
           return false;
         }
+
+        if (!imagen) {
+          mensError.innerHTML += "La imagen es opcional, pero si se proporciona, la ruta debe ser válida.";
+          return false;
+        }
         
         return true;
         }
