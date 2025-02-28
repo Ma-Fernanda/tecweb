@@ -63,6 +63,11 @@
           mensError.innerHTML += "Los detalles, si se usan, deben tener un máximo de 250 caracteres.";
           return false;
         }
+
+        if (!unidades || isNaN(unidades) || unidades < 0) {
+          mensError.innerHTML += "Las unidades son requeridas y deben ser un número mayor o igual a 0.";
+          return false;
+        }
         
         return true;
         }
