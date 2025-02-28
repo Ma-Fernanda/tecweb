@@ -43,8 +43,19 @@
           return false;
         }
 
+        if(!modelo) {
+          mensError.innerHTML += "El modelo es necesario. <br>";
+          return false;
+        } else if (modelo.length > 25){
+          mensError.innerHTML += "El modelo debe tener máximo 25 caracteres. <br>";
+          return false;
+        } else if (!/^[a-zA-Z0-9]+$/.test(modelo)) { 
+        mensError.innerHTML += "El modelo debe ser alfanumérico.<br>";
+        return false;
+        }
         
-
+        
+        
         return true;
         }
     </script>
