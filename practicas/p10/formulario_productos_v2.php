@@ -83,6 +83,7 @@
     <h1>Editar Producto</h1>
     <div id="mensError" class="error"></div>
     <form id="formularioProductos" action="update_producto.php" method="post" onsubmit="return validarFormulario();">
+    <input type="hidden" id="form-id" name="id" value="<?= htmlspecialchars($_GET['id'] ?? $_POST['id'] ?? '') ?>">
     <fieldset>
         <legend>Actualiza la Información del Producto</legend>
         <ul>
@@ -90,15 +91,13 @@
             <li><label for="form-marca">Marca:</label> <input type="text" name="marca" value="<?= !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'] ?>"></li>
             <li><label for="form-model">Modelo:</label> <input type="text" name="modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>"></li>
             <li><label for="form-precio">Precio:</label> <input type="number" name="precio" value="<?= !empty($_POST['precio'])?$_POST['precio']:$_GET['precio'] ?>"></li>
-            <li><label for="form-details">Detalles:</label> <input type="text" name="details" value="<?= !empty($_POST['details'])?$_POST['details']:$_GET['details'] ?>"></li>
+            <li><label for="form-details">Detalles:</label> <input type="text" name="detalles" value="<?= isset($_POST['detalles']) ? $_POST['detalles'] : (isset($_GET['detalles']) ? $_GET['detalles'] : '') ?>"></li>
             <li><label for="form-unidades">Unidades:</label> <input type="number" name="unidades" value="<?= !empty($_POST['unidades'])?$_POST['unidades']:$_GET['unidades'] ?>"></li>
             <li><label for="form-img">Imagen:</label> <input type="text" name="imagen" value="<?= !empty($_POST['imagen'])?$_POST['imagen']:$_GET['imagen'] ?>"></li>    
          </ul>
     </fieldset>
     <p>
         <input type="submit" value="Actualizar Producto">
-        <a href="get_productos_xhtml_v2.php" class="btn btn-secondary">Volver a Productos</a>
-        <a href="get_productos_vigentes_v2.php" class="btn btn-secondary">Ver Productos Vigentes</a>
 
         </p>
     </form>

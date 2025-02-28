@@ -9,7 +9,7 @@
     <SCript>
         function show() {
               var row = event.target.closest("tr");
-
+              var id = row.querySelector("th").innerHTML;
                 // se obtienen los datos de la fila en forma de arreglo
                 var data = row.querySelectorAll(".row-data");
                 /**
@@ -27,26 +27,27 @@
                 var precio = data[3].innerHTML;
                 var unidades = data[4].innerHTML;
                 var detalles = data[5].innerHTML;
-                var imagen = data[6].firstChild.getAttribute('img');
+                var imagen = data[6].querySelector('img').getAttribute('src');
 
                 alert("Nombre: " + nombre + "\nMarca: " + marca + "\nModelo: " + modelo + "\nPrecio" + precio
                     + "\nUnidades: " + unidades + "\nDetalles: " + detalles + "\nImagen: " + imagen);
 
-                send2form(nombre, marca, modelo, precio, unidades, detalles, imagen);
+                send2form(id, nombre, marca, modelo, precio, unidades, detalles, imagen);
 
             }
         
-            function send2form(nombre, marca, modelo, precio, unidades, detalles, imagen) {     
+            function send2form(id,nombre, marca, modelo, precio, unidades, detalles, imagen) {     
                 var urlForm = "formulario_productos_v2.php";
+                var propId = "id=" + id;
                 var propNombre = "nombre="+nombre;
                 var propMarca = "marca="+marca;
                 var propModelo = "modelo="+modelo;
-                var propPrecio = "precio="+precio;
+                var propPrecio = "precio= $"+precio;
                 var propUnidades = "unidades="+unidades;
                 var propDetalles = "details="+detalles;
                 var propImagen = "imagen="+imagen;
 
-                var url = urlForm+"?"+propNombre+"&"+propMarca+"&"+propModelo+"&"+propPrecio+"&"+propUnidades+"&"+propDetalles+"&"+propImagen;
+                var url = urlForm+"?"+propId +"&"+propNombre+"&"+propMarca+"&"+propModelo+"&"+propPrecio+"&"+propUnidades+"&"+propDetalles+"&"+propImagen;
                 window.open(url);
             }
     </SCript>

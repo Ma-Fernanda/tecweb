@@ -97,9 +97,6 @@
     </fieldset>
     <p>
         <input type="submit" value="Actualizar Producto">
-        <a href="get_productos_xhtml_v2.php" class="btn btn-secondary">Volver a Productos</a>
-        <a href="get_productos_vigentes_v2.php" class="btn btn-secondary">Ver Productos Vigentes</a>
-
         </p>
     </form>
   </body>

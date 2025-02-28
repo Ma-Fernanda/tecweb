@@ -5,50 +5,53 @@ if ($link === false) {
     die("ERROR: No pudo conectarse con la DB. " . mysqli_connect_error());
 }
 
+if (!isset($_POST['id']) || empty ($_POST['id'])) {
+    die("ERROR: ID no ah sido proporcionado.");
+} 
+    $id = intval($_POST['id']); 
 
 
-    $updates = [];
+$updates = [];
+if (!empty($_POST['nombre'])) {
+    $nombre = mysqli_real_escape_string($link, $_POST['nombre']);
+    $updates[] = "nombre='$nombre'";
+}
 
-    if (isset($_POST['nombre']) && $_POST['nombre'] != '') {
-        $nombre = $_POST['nombre'];
-        $updates[] = "nombre='$nombre'";
-    }
+if (!empty($_POST['marca'])) {
+    $marca = mysqli_real_escape_string($link, $_POST['marca']);
+    $updates[] = "marca='$marca'";
+}
 
-    if (isset($_POST['marca']) && $_POST['marca'] != '') {
-        $marca = $_POST['marca'];
-        $updates[] = "marca='$marca'";
-    }
+if (!empty($_POST['modelo'])) {
+    $modelo = mysqli_real_escape_string($link, $_POST['modelo']);
+    $updates[] = "modelo='$modelo'";
+}
 
-    if (isset($_POST['modelo']) && $_POST['modelo'] != '') {
-        $modelo = $_POST['modelo'];
-        $updates[] = "modelo='$modelo'";
-    }
+if (!empty($_POST['precio'])) {
+    $precio = floatval($_POST['precio']);
+    $updates[] = "precio=$precio";
+}
 
-    if (isset($_POST['precio']) && $_POST['precio'] != '') {
-        $precio = floatval($_POST['precio']);
-        $updates[] = "precio=$precio";
-    }
+if (!empty($_POST['detalles'])) {
+    $detalles = mysqli_real_escape_string($link, $_POST['detalles']);
+    $updates[] = "detalles='$detalles'";
+}
 
-    if (isset($_POST['details']) && $_POST['details'] != '') {
-        $detalles = $_POST['details'];
-        $updates[] = "details='$detalles'";
-    }
+if (!empty($_POST['unidades'])) {
+    $unidades = intval($_POST['unidades']);
+    $updates[] = "unidades=$unidades";
+}
 
-    if (isset($_POST['unidades']) && $_POST['unidades'] != '') {
-        $unidades = intval($_POST['unidades']);
-        $updates[] = "unidades=$unidades";
-    }
-
-    if (isset($_POST['imagen']) && $_POST['imagen'] != '') {
-        $imagen = $_POST['imagen'];
-        $updates[] = "imagen='$imagen'";
-    }
+if (!empty($_POST['imagen'])) {
+    $imagen = mysqli_real_escape_string($link, $_POST['imagen']);
+    $updates[] = "imagen='$imagen'";
+}
 
     if (count($updates) > 0) {
         $sql = "UPDATE productos SET " . implode(', ', $updates) . " WHERE id=$id";
         if (mysqli_query($link, $sql)) {
             echo "Producto actualizado.";
-            echo '<a href="get_productos_xhtml_v2.php">Ver todos los productos</a> | ';
+            echo '<a href="get_productos_xhtml_v2.php">Ver todos los productos</a>';
             echo '<a href="get_productos_vigentes_v2.php">Ver productos vigentes</a>';
         } else {
             echo "ERROR: No se ejecutó $sql. " . mysqli_error($link);

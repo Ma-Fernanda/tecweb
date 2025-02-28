@@ -42,7 +42,7 @@
                 var propModelo = "modelo="+modelo;
                 var propPrecio = "precio="+precio;
                 var propUnidades = "unidades="+unidades;
-                var propDetalles = "details="+detalles;
+                var propDetalles = "detalles="+detalles;
                 var propImagen = "imagen="+imagen;
 
                 var url = urlForm+"?"+propNombre+"&"+propMarca+"&"+propModelo+"&"+propPrecio+"&"+propUnidades+"&"+propDetalles+"&"+propImagen;
