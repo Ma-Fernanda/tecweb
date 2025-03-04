@@ -69,6 +69,10 @@ function buscarProducto(e) {
 function agregarProducto(e) {
     e.preventDefault();
 
+    //se valida el formulario antes de enviarse
+    if (!validarFormulario()) {
+        return;        
+    }
     // SE OBTIENE DESDE EL FORMULARIO EL JSON A ENVIAR
     var productoJsonString = document.getElementById('description').value;
     // SE CONVIERTE EL JSON DE STRING A OBJETO
@@ -90,6 +94,80 @@ function agregarProducto(e) {
     };
     client.send(productoJsonString);
 }
+
+//FUNCION PARA VALIDAR LOS CAMPOS DE LOS DETALLES DEL PRODUCTO
+function validarFormulario() {
+    const mensError = document.getElementById('mensError');
+    mensError.innerHTML = '';
+
+    const nombre = document.getElementById('name').value.trim();
+    const descripcion = document.getElementById('description').value.trim();
+
+    let errores = []; // Almacena los errores
+
+    // Validar nombre del producto
+    if (!nombre) {
+        errores.push("El nombre del producto es necesario.");
+    } else if (nombre.length > 100) {
+        errores.push("El nombre del producto debe tener un máximo de 100 caracteres.");
+    }
+
+    // Validar que la descripción tenga contenido JSON válido
+    if (descripcion === "") {
+        errores.push("La descripción no puede estar vacía.");
+    } else {
+        try {
+            // Convertimos el JSON de texto a objeto
+            const datos = JSON.parse(descripcion);
+
+            // Validamos que el JSON tenga las claves requeridas
+            if (!("precio" in datos) || !("unidades" in datos) ||
+                !("modelo" in datos) || !("marca" in datos) ||
+                !("detalles" in datos) || !("imagen" in datos)) {
+                errores.push("Faltan datos en el JSON.");
+            }
+
+            // Validaciones de los datos en el JSON
+            if (!datos.marca) {
+                errores.push("La marca es requerida.");
+            }
+
+            if (!datos.modelo) {
+                errores.push("El modelo es necesario.");
+            } else if (datos.modelo.length > 25) {
+                errores.push("El modelo debe tener máximo 25 caracteres.");
+            } else if (!/^[a-zA-Z0-9]+$/.test(datos.modelo)) {
+                errores.push("El modelo debe ser alfanumérico.");
+            }
+
+            if (!datos.precio || isNaN(datos.precio) || datos.precio <= 99.99) {
+                errores.push("El precio es requerido y debe ser mayor a 99.99.");
+            }
+
+            if (datos.detalles.length > 250) {
+                errores.push("Los detalles, si se usan, deben tener un máximo de 250 caracteres.");
+            }
+
+            if (!datos.unidades || isNaN(datos.unidades) || datos.unidades < 0) {
+                errores.push("Las unidades son requeridas y deben ser un número mayor o igual a 0.");
+            }
+
+            if (!datos.imagen) {
+                errores.push("La imagen es opcional, pero si se proporciona, la ruta debe ser válida.");
+            }
+        } catch (error) {
+            errores.push("El JSON no es válido.");
+        }
+    }
+
+    if (errores.length > 0) {
+        mensError.innerHTML = errores.join("<br>");
+        return false;
+    }
+
+    return true;
+}
+
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
 function getXMLHttpRequest() {

@@ -11,7 +11,7 @@
     </style>
     <script>
             
-    function validarFormulario() {
+function validarFormulario() {
         const mensError = document.getElementById('mensError');
         mensError.innerHTML = '';
         const nombre = document.getElementById('form-name').value;
