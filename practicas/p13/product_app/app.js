@@ -155,6 +155,7 @@ $(document).ready(function(){
             listarProductos();
             // SE REGRESA LA BANDERA DE EDICIÓN A false
             edit = false;
+            $('button.btn-primary').text("Agregar Producto");
         });
     });
 
