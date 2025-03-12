@@ -29,23 +29,50 @@
         <div class="col-md-5">
           <div class="card">
             <div class="card-body">
-              <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
+              <!-- FORMULARIO PARA AGREGAR PRODUCTO -->             
               <form id="product-form">
                 <div class="form-group">
-                  <input class="form-control" type="text" id="name" placeholder="Nombre de producto">
+                    <label for="name">Nombre de producto:</label>
+                    <input class="form-control" type="text" id="name" placeholder="Nombre de producto" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>
+                    <label for="form-marca">Marca:</label>
+                    <select class="form-control" name="marca" id="form-marca" required>
+                        <option value="">Seleccione una marca</option>
+                        <option value="cassio">Cassio</option>
+                        <option value="timex">Timex</option>
+                        <option value="swatch">Swatch</option>
+                        <option value="citizen">Citizen</option>
+                    </select>
                 </div>
+                <div class="form-group">
+                  <label for="modelo">Modelo:</label>
+                  <input class="form-control" type="text" id="modelo" placeholder="Modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio:</label>
+                    <input class="form-control" type="number" id="price" placeholder="Precio" required>
+                </div>
+                <div class="form-group">
+                  <label for="unidades">Unidades:</label>
+                  <input class="form-control" type="number" id="unidades" placeholder="Unidades" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea class="form-control" id="descripcion" cols="30" rows="3" placeholder="Descripción" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="img">Imagen:</label>
+                  <input class="form-control" type="text" id="img" placeholder="Ruta de la imagen del Producto" required>
+              </div>
                 <input type="hidden" id="productId">
                 <button class="btn btn-primary btn-block text-center" type="submit">
-                  Agregar Producto
+                    Agregar Producto
                 </button>
               </form>
             </div>
           </div>
-        </div>
-
+        </div> 
         <!-- TABLA  -->
         <div class="col-md-7">
           <div class="card my-4" id="product-result">

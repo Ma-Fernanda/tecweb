@@ -1,18 +1,19 @@
 // JSON BASE A MOSTRAR EN FORMULARIO
-var baseJSON = {
+/*var baseJSON = {
     "precio": 0.0,
     "unidades": 1,
     "modelo": "XX-000",
     "marca": "NA",
     "detalles": "NA",
     "imagen": "img/default.png"
-  };
+  };*/
 
 $(document).ready(function(){
     let edit = false;
 
-    let JsonString = JSON.stringify(baseJSON,null,2);
-    $('#description').val(JsonString);
+    //let JsonString = JSON.stringify(baseJSON,null,2);
+    //$('#description').val(JsonString);
+    
     $('#product-result').hide();
     listarProductos();
 
@@ -146,7 +147,7 @@ $(document).ready(function(){
                     `;
             // SE REINICIA EL FORMULARIO
             $('#name').val('');
-            $('#description').val(JsonString);
+            //$('#description').val(JsonString);
             // SE HACE VISIBLE LA BARRA DE ESTADO
             $('#product-result').show();
             // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
@@ -188,7 +189,7 @@ $(document).ready(function(){
             // SE CONVIERTE EL OBJETO JSON EN STRING
             let JsonString = JSON.stringify(product,null,2);
             // SE MUESTRA STRING EN EL <textarea>
-            $('#description').val(JsonString);
+            //$('#description').val(JsonString);
             
             // SE PONE LA BANDERA DE EDICIÓN EN true
             edit = true;
