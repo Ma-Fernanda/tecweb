@@ -159,6 +159,7 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.product-delete', (e) => {
+        $('button.btn-primary').text("Modificar Producto");
         if(confirm('¿Realmente deseas eliminar el producto?')) {
             const element = $(this)[0].activeElement.parentElement.parentElement;
             const id = $(element).attr('productId');
