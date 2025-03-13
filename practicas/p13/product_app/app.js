@@ -4,7 +4,6 @@ $(document).ready(function(){
 
     // Función para verificar si el nombre ya existe en la base de datos
     $('#name').keyup(function() {
-        let errores = [];
         const nombreProducto = $(this).val().trim();
         if (nombreProducto.length > 0) {
             $.ajax({
@@ -241,7 +240,6 @@ $(document).ready(function(){
     };
 
     $(document).on('click', '.product-delete', (e) => {
-        $('button.btn-primary').text("Modificar Producto");
         if(confirm('¿Realmente deseas eliminar el producto?')) {
             const element = $(this)[0].activeElement.parentElement.parentElement;
             const id = $(element).attr('productId');
@@ -253,6 +251,7 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.product-item', (e) => {
+        $('button.btn-primary').text("Modificar Producto");
         const element = $(this)[0].activeElement.parentElement.parentElement;
         const id = $(element).attr('productId');
         $.post('./backend/product-single.php', {id}, (response) => {
