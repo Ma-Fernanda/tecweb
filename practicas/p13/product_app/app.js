@@ -1,19 +1,38 @@
-// JSON BASE A MOSTRAR EN FORMULARIO
-/*var baseJSON = {
-    "precio": 0.0,
-    "unidades": 1,
-    "modelo": "XX-000",
-    "marca": "NA",
-    "detalles": "NA",
-    "imagen": "img/default.png"
-  };*/
 
 $(document).ready(function(){
     let edit = false;
 
-    //let JsonString = JSON.stringify(baseJSON,null,2);
-    //$('#description').val(JsonString);
-    
+    // Función para verificar si el nombre ya existe en la base de datos
+    $('#name').keyup(function() {
+        let errores = [];
+        const nombreProducto = $(this).val().trim();
+        if (nombreProducto.length > 0) {
+            $.ajax({
+                url: './backend/product-validate-name.php',  
+                type: 'GET',
+                data: { nombre : nombreProducto }, 
+                dataType: 'json', 
+                success: function(response) {
+                    console.log(response);
+                    if (response.exists) {
+                        $('#name-error').show().text(`El producto "${response.productName}" ya existe en la base de datos.`);
+                        window.status = `El producto "${response.productName}" ya existe en la base de datos.`;
+                    } else {
+                        $('#name-error').hide();
+                        $('#name-error').show().text(`El producto aun no existe en la base de datos.`);
+                        window.status =`El producto aun no existe en la base de datos.`;
+                    }
+                },
+                error: function() {
+                    console.error("Error en AJAX", error);
+                    $('#name-error').hide();
+                }
+            });
+        } else {
+            $('#name-error').hide(); 
+        }
+    });
+
     $('#product-result').hide();
     listarProductos();
 
