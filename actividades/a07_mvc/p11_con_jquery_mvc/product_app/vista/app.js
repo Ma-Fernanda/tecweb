@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     function listarProductos() {
         $.ajax({
-            url: './backend/product-list.php',
+            url: '../backend/controlador/controlador.php?action=list',
             type: 'GET',
             success: function(response) {
                 // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
@@ -44,7 +44,7 @@ $(document).ready(function(){
                                 <td><a href="#" class="product-item">${producto.nombre}</a></td>
                                 <td><ul>${descripcion}</ul></td>
                                 <td>
-                                    <button class="product-delete btn btn-danger" onclick="eliminarProducto()">
+                                    <button class="product-delete btn btn-danger">
                                         Eliminar
                                     </button>
                                 </td>
@@ -62,7 +62,7 @@ $(document).ready(function(){
         if($('#search').val()) {
             let search = $('#search').val();
             $.ajax({
-                url: './backend/product-search.php?search='+$('#search').val(),
+                url: '../backend/controlador/controlador.php?action=search',
                 data: {search},
                 type: 'GET',
                 success: function (response) {
@@ -271,7 +271,8 @@ $(document).ready(function(){
                 id: $('#productId').val()
             };
 
-            const url = edit === false ? './backend/product-add.php' : './backend/product-edit.php';
+            const url = edit === false ? '../backend/controlador/controlador.php?action=add' : 
+                                            '../backend/controlador/controlador.php?action=edit';
 
             $.post(url, postData, (response) => {
                 let respuesta = JSON.parse(response);
@@ -299,7 +300,7 @@ $(document).ready(function(){
         if(confirm('¿Realmente deseas eliminar el producto?')) {
             const element = $(this)[0].activeElement.parentElement.parentElement;
             const id = $(element).attr('productId');
-            $.post('./backend/product-delete.php', {id}, (response) => {
+            $.post('../backend/controlador/controlador.php?action=delete', {id}, (response) => {
                 $('#product-result').hide();
                 listarProductos();
             });
@@ -309,7 +310,7 @@ $(document).ready(function(){
     $(document).on('click', '.product-item', (e) => {
         const element = $(this)[0].activeElement.parentElement.parentElement;
         const id = $(element).attr('productId');
-        $.post('./backend/product-single.php', {id}, (response) => {
+        $.post('../backend/controlador/controlador.php?action=single', {id}, (response) => {
             // SE CONVIERTE A OBJETO EL JSON OBTENIDO
             let product = JSON.parse(response);
             // SE INSERTAN LOS DATOS ESPECIALES EN LOS CAMPOS CORRESPONDIENTES
@@ -337,7 +338,7 @@ $(document).ready(function(){
         // Verificar que el nombre no esté vacío antes de hacer la consulta al servidor
         if (name !== '') {
             $.ajax({
-                url: './backend/product-name.php', 
+                url: '../backend/controlador/controlador.php?action=name', 
                 type: 'GET',
                 data: { name: name }, 
                 success: function(response) {
