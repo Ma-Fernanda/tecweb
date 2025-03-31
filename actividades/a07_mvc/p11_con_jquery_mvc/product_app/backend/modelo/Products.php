@@ -1,13 +1,13 @@
 <?php
-namespace TECWEB\MYAPI;
+namespace TECWEB\MODELO;
 
-use TECWEB\MYAPI\DataBase as DataBase;
+use TECWEB\MODELO\DataBase as DataBase;
 
 require_once __DIR__ . '/DataBase.php';
 
 class Products extends DataBase {
     private $data = NULL;
-    public function __construct($db, $user = 'root', $pass = 'Fernanda465') {
+    public function __construct($db, $user = 'root', $pass = '') {
         $this->data = array();
         parent::__construct($user, $pass, $db);
     }
@@ -192,7 +192,6 @@ class Products extends DataBase {
             $this->conexion->close();
         }
     }
-
 
     public function getData() {
         return json_encode($this->data, JSON_PRETTY_PRINT);
