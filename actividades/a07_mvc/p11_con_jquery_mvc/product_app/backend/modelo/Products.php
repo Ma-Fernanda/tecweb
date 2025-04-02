@@ -7,7 +7,7 @@ require_once __DIR__ . '/DataBase.php';
 
 class Products extends DataBase {
     private $data = NULL;
-    public function __construct($db, $user = 'root', $pass = '') {
+    public function __construct($db, $user = 'root', $pass = 'Fernanda465') {
         $this->data = array();
         parent::__construct($user, $pass, $db);
     }
