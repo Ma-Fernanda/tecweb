@@ -1,10 +1,10 @@
 {
     "autoload": {
         "classmap": [
-            "backend/Create",
-            "backend/Read",
-            "backend/Delete",
-            "backend/Update"
+            "StoreTech/Create",
+            "StoreTech/Read",
+            "StoreTech/Delete",
+            "StoreTech/Update"
         ]
     }
 }

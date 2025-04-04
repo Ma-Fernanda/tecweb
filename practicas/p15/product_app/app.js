@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     function listarProductos() {
         $.ajax({
-            url: './backend/Read/product-list.php',
+            url: './StoreTech/Read/product-list.php',
             type: 'GET',
             success: function(response) {
                 console.log(response);
@@ -63,7 +63,7 @@ $(document).ready(function(){
         if($('#search').val()) {
             let search = $('#search').val();
             $.ajax({
-                url: './backend/Read/product-search.php?search='+$('#search').val(),
+                url: './StoreTech/Read/product-search.php?search='+$('#search').val(),
                 data: {search},
                 type: 'GET',
                 success: function (response) {
@@ -133,7 +133,7 @@ $(document).ready(function(){
          * --> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
          **/
 
-        const url = edit === false ? './backend/Create/product-add.php' : './backend/Update/product-edit.php';
+        const url = edit === false ? './StoreTech/Create/product-add.php' : './StoreTech/Update/product-edit.php';
         
         $.post(url, postData, (response) => {
             console.log(response);
@@ -163,7 +163,7 @@ $(document).ready(function(){
         if(confirm('¿Realmente deseas eliminar el producto?')) {
             const element = $(this)[0].activeElement.parentElement.parentElement;
             const id = $(element).attr('productId');
-            $.post('./backend/Delete/product-delete.php', {id}, (response) => {
+            $.post('./StoreTech/Delete/product-delete.php', {id}, (response) => {
                 $('#product-result').hide();
                 listarProductos();
             });
@@ -173,7 +173,7 @@ $(document).ready(function(){
     $(document).on('click', '.product-item', (e) => {
         const element = $(this)[0].activeElement.parentElement.parentElement;
         const id = $(element).attr('productId');
-        $.post('./backend/Read/product-single.php', {id}, (response) => {
+        $.post('./StoreTech/Read/product-single.php', {id}, (response) => {
             // SE CONVIERTE A OBJETO EL JSON OBTENIDO
             let product = JSON.parse(response);
             // SE INSERTAN LOS DATOS ESPECIALES EN LOS CAMPOS CORRESPONDIENTES
