@@ -1,6 +1,6 @@
 <?php
 namespace TECWEB\MYAPI;
-
+require_once __DIR__ . '/../../vendor/autoload.php';
 abstract class DataBase {
     protected $conexion;
 

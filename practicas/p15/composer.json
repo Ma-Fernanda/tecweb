@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "classmap": [
+            "backend/Create", 
+            "backend/Delete", 
+            "backend/Read", 
+            "backend/Update" 
+        ]
+    }
+}
