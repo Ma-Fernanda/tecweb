@@ -1,10 +1,7 @@
 {
     "autoload": {
-        "classmap": [
-            "StoreTech/Create",
-            "StoreTech/Read",
-            "StoreTech/Delete",
-            "StoreTech/Update"
-        ]
+        "psr-4": {
+            "StoteTech\\": "StoreTech"
+        }
     }
 }
