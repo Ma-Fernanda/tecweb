@@ -11,5 +11,11 @@ $app->get('/', function ($request, $response, $args){
     $response->getBody()->write("Hola mundo Slim");
     return $response;
 });
+
+$app->get("/hola[/{nombre}]", function($request, $response, $args){
+    $response->getBody()->write("Hola, ". $args["nombre"]);
+    return $response;
+});
+
 $app->run();
 ?>
